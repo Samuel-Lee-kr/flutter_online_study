@@ -52,7 +52,7 @@ Object ->  DiagnosticableTree -> Widget
 
 전체 단계는 이렇다. [아래 그림은 유저의 행동부터 GPU에게 컨트롤이 넘어갈 때까지, high - low 순서대로 어떤 일이 일어나는지 순서대로 나타낸 것이다.](https://docs.flutter.dev/resources/architectural-overview#from-user-input-to-the-gpu)
 
-![Untitled](%E1%84%8B%E1%85%B1%E1%84%8C%E1%85%A6%E1%86%BA%20f57aa4a9e6bb4129aa4f87743f95857a/Untitled.png)
+![Untitled](../imgs/widget01.png)
 
 플러터는 build 단계에서 위젯 트리(widget tree)와 엘리먼트 트리(element tree)를 만들고, layout 단계에서 렌더 트리(render tree)를 만든 다음 paint 단계에서 가장 마지막에 만든 렌더 트리를 써먹는다.
 
@@ -60,7 +60,7 @@ Object ->  DiagnosticableTree -> Widget
 
 ## 5. build 함수의 실행 결과는 widget tree
 
-![Untitled](%E1%84%8B%E1%85%B1%E1%84%8C%E1%85%A6%E1%86%BA%20f57aa4a9e6bb4129aa4f87743f95857a/Untitled%201.png)
+![Untitled](../imgs/widget02.png)
 
 세개의 트리가 만들어짐. 
 
@@ -68,11 +68,11 @@ Object ->  DiagnosticableTree -> Widget
 - 엘리먼트 트리 : 설명서를 보고 실제로 그려질  instance를 만들어놓은것.  : **실제 lifeCycle 관리**
 - 렌더 트리 : 실제로 화면을 그릴 노드 (엘리먼트트리의 RenderObejectElement). 반드시 필요한 내용만 담는다.
 
-![Untitled](%E1%84%8B%E1%85%B1%E1%84%8C%E1%85%A6%E1%86%BA%20f57aa4a9e6bb4129aa4f87743f95857a/Untitled%202.png)
+![Untitled](../imgs/widget03.png)
 
 - StatefulWidget 위젯트리 예시
 
-![Untitled](%E1%84%8B%E1%85%B1%E1%84%8C%E1%85%A6%E1%86%BA%20f57aa4a9e6bb4129aa4f87743f95857a/Untitled%203.png)
+![Untitled](../imgs/widget04.png)
 
 ## 6. 위젯은 immutable, 엘리먼트, RenderObject는 mutable
 
