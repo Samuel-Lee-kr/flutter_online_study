@@ -1,7 +1,9 @@
+import 'package:counter/src/pages/simple_state_manage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'pages/normal/first.dart';
+import 'pages/reactive_state_manage_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -37,6 +39,18 @@ class Home extends StatelessWidget {
                 onPressed: (){
                   //Parameter 전달
                   Get.toNamed("/user/12345?name=준호&age=34");
+                }),
+            RaisedButton(
+                child: Text("단순상태관리"),
+                onPressed: (){
+                  //Parameter 전달
+                  Get.to(SimpleStateManagePage());
+                }),
+            RaisedButton(
+                child: Text("반응형상태관리"),
+                onPressed: (){
+                  //Parameter 전달
+                  Get.to(ReactiveStateManagePage());
                 })
           ],
         ),
