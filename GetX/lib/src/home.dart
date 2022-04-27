@@ -2,6 +2,7 @@ import 'package:counter/src/pages/simple_state_manage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'pages/dependency/dependency_manage_page.dart';
 import 'pages/normal/first.dart';
 import 'pages/reactive_state_manage_page.dart';
 
@@ -43,14 +44,17 @@ class Home extends StatelessWidget {
             RaisedButton(
                 child: Text("단순상태관리"),
                 onPressed: (){
-                  //Parameter 전달
                   Get.to(SimpleStateManagePage());
                 }),
             RaisedButton(
                 child: Text("반응형상태관리"),
                 onPressed: (){
-                  //Parameter 전달
                   Get.to(ReactiveStateManagePage());
+                }),
+            RaisedButton(
+                child: Text("의존성관리"),
+                onPressed: (){
+                  Get.to(DependencyManagePage());
                 })
           ],
         ),
