@@ -5,7 +5,7 @@ void main(List<String> args) {
   List<String>? input = stdin.readLineSync()?.split(" ");
   
     int row = int.parse(input![0]);
-    int column = int.parse(input![1]);
+    int column = int.parse(input[1]);
     String fullLine = "#" * row;
     String rightLine = "." * (row - 1) + "#";
     String leftLine = "#" + "." * (row - 1);
