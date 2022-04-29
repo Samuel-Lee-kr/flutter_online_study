@@ -48,9 +48,9 @@ class Home extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           _myStory(),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           ...List.generate(
             100,
             (index) => AvatarWidget(
@@ -65,7 +65,7 @@ class Home extends StatelessWidget {
 
   Widget _postList(){
     return Column(
-      children: List.generate(50, (index) => PostWidget()).toList(),
+      children: List.generate(50, (index) => const PostWidget()).toList(),
     );
   }
 
