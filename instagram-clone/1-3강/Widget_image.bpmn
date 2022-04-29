@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0xar6f9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_1ta2jgm" isExecutable="true">
+    <bpmn:subProcess id="Activity_1lz2rif" name="main.dart &#60;GetMaterialApp)">
+      <bpmn:subProcess id="Activity_1efao3y" name="App.dart">
+        <bpmn:subProcess id="Activity_19ctg75" name="Scaffold">
+          <bpmn:subProcess id="Activity_0ahx471" name="Body">
+            <bpmn:subProcess id="Activity_17nqqpi" name="Home.dart">
+              <bpmn:subProcess id="Activity_0pvcyrf" name="Scaffold">
+                <bpmn:task id="Activity_0ofie4w" name="AppBar" />
+                <bpmn:subProcess id="Activity_0eamxvc" name="Body">
+                  <bpmn:subProcess id="Activity_0j1llv6" name="ListView">
+                    <bpmn:task id="Activity_07di9lz" name="_postList Widget" />
+                    <bpmn:subProcess id="Activity_1sgfx6s" name="_storyBoardListWidget">
+                      <bpmn:task id="Activity_1cpn8ha" name="_myStory">
+                        <bpmn:outgoing>Flow_0kqhaw3</bpmn:outgoing>
+                      </bpmn:task>
+                      <bpmn:task id="Activity_1b399ai" name="AvatarWidget">
+                        <bpmn:incoming>Flow_0kqhaw3</bpmn:incoming>
+                      </bpmn:task>
+                      <bpmn:sequenceFlow id="Flow_0kqhaw3" sourceRef="Activity_1cpn8ha" targetRef="Activity_1b399ai" />
+                    </bpmn:subProcess>
+                  </bpmn:subProcess>
+                </bpmn:subProcess>
+              </bpmn:subProcess>
+            </bpmn:subProcess>
+            <bpmn:subProcess id="Activity_1x5sqxr" name="Search.dart" />
+            <bpmn:subProcess id="Activity_0q42v99" name="Activity.dart" />
+            <bpmn:subProcess id="Activity_01fz3h9" name="Mypage.dart" />
+          </bpmn:subProcess>
+          <bpmn:subProcess id="Activity_1mzbv92" name="BottomNavigationBar">
+            <bpmn:task id="Activity_167j2xg" name="Home" />
+            <bpmn:task id="Activity_11bvzhe" name="Search" />
+            <bpmn:task id="Activity_1097kzj" name="Upload" />
+            <bpmn:task id="Activity_0ps4ln9" name="Active" />
+            <bpmn:task id="Activity_1762ed0" name="Profile" />
+          </bpmn:subProcess>
+        </bpmn:subProcess>
+      </bpmn:subProcess>
+      <bpmn:subProcess id="Activity_1sudeby" name="InitBinding.dart">
+        <bpmn:task id="Activity_1fbpae7" name="Controller =&#62; put" />
+        <bpmn:textAnnotation id="TextAnnotation_0wt0kv3">
+          <bpmn:text>controller 정의</bpmn:text>
+        </bpmn:textAnnotation>
+        <bpmn:association id="Association_0oiij7x" sourceRef="Activity_1fbpae7" targetRef="TextAnnotation_0wt0kv3" />
+      </bpmn:subProcess>
+    </bpmn:subProcess>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1ta2jgm">
+      <bpmndi:BPMNShape id="Activity_0nu40oa_di" bpmnElement="Activity_1lz2rif" isExpanded="true" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
+        <dc:Bounds x="160" y="80" width="1860" height="1470" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_139noqz_di" bpmnElement="Activity_1sudeby" isExpanded="true">
+        <dc:Bounds x="1630" y="120" width="320" height="130" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0wt0kv3_di" bpmnElement="TextAnnotation_0wt0kv3">
+        <dc:Bounds x="1810" y="175" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1fbpae7_di" bpmnElement="Activity_1fbpae7">
+        <dc:Bounds x="1680" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0oiij7x_di" bpmnElement="Association_0oiij7x">
+        <di:waypoint x="1780" y="190" />
+        <di:waypoint x="1810" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_11snhh9_di" bpmnElement="Activity_1efao3y" isExpanded="true" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="250" y="260" width="1320" height="1240" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_00ke7kr_di" bpmnElement="Activity_19ctg75" isExpanded="true" bioc:stroke="#8e24aa" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#8e24aa">
+        <dc:Bounds x="290" y="300" width="1180" height="1180" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1on2asv_di" bpmnElement="Activity_0ahx471" isExpanded="true" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
+        <dc:Bounds x="320" y="350" width="1050" height="750" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_12qj561_di" bpmnElement="Activity_17nqqpi" isExpanded="true" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="350" y="390" width="320" height="690" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pvcyrf_di" bpmnElement="Activity_0pvcyrf" isExpanded="true">
+        <dc:Bounds x="370" y="430" width="280" height="630" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ofie4w_di" bpmnElement="Activity_0ofie4w">
+        <dc:Bounds x="460" y="460" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0eamxvc_di" bpmnElement="Activity_0eamxvc" isExpanded="true">
+        <dc:Bounds x="390" y="560" width="240" height="480" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0j1llv6_di" bpmnElement="Activity_0j1llv6" isExpanded="true">
+        <dc:Bounds x="410" y="600" width="200" height="400" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07di9lz_di" bpmnElement="Activity_07di9lz">
+        <dc:Bounds x="460" y="900" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1sgfx6s_di" bpmnElement="Activity_1sgfx6s" isExpanded="true">
+        <dc:Bounds x="430" y="630" width="160" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0kqhaw3_di" bpmnElement="Flow_0kqhaw3">
+        <di:waypoint x="510" y="750" />
+        <di:waypoint x="510" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1cpn8ha_di" bpmnElement="Activity_1cpn8ha">
+        <dc:Bounds x="460" y="670" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1b399ai_di" bpmnElement="Activity_1b399ai">
+        <dc:Bounds x="460" y="770" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01fz3h9_di" bpmnElement="Activity_01fz3h9" isExpanded="true" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="1200" y="390" width="140" height="440" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0q42v99_di" bpmnElement="Activity_0q42v99" isExpanded="true" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="950" y="390" width="210" height="440" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1x5sqxr_di" bpmnElement="Activity_1x5sqxr" isExpanded="true" bioc:stroke="#43a047" bioc:fill="#c8e6c9" color:background-color="#c8e6c9" color:border-color="#43a047">
+        <dc:Bounds x="720" y="390" width="210" height="440" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_048zn6h_di" bpmnElement="Activity_1mzbv92" isExpanded="true" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
+        <dc:Bounds x="320" y="1130" width="1050" height="130" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_167j2xg_di" bpmnElement="Activity_167j2xg">
+        <dc:Bounds x="400" y="1160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1762ed0_di" bpmnElement="Activity_1762ed0">
+        <dc:Bounds x="1210" y="1160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ps4ln9_di" bpmnElement="Activity_0ps4ln9">
+        <dc:Bounds x="1000" y="1160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1097kzj_di" bpmnElement="Activity_1097kzj">
+        <dc:Bounds x="790" y="1160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_11bvzhe_di" bpmnElement="Activity_11bvzhe">
+        <dc:Bounds x="590" y="1160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
