@@ -39,19 +39,19 @@ Card( child:... )
 
  
 
-![20220408_101856.jpg](../imgs/study03_0.jpg)
+![20220408_101856.jpg](../imgs/heechan/study03_0.jpg)
 
-![Untitled](../imgs/study03_1.png)
+![Untitled](../imgs/heechan/study03_1.png)
 
-![Untitled](../imgs/study03_2.png)
+![Untitled](../imgs/heechan/study03_2.png)
 
 1. 텍스트
 
-![Untitled](../imgs/study03_3.png)
+![Untitled](../imgs/heechan/study03_3.png)
 
 1. 컨테이너 vs 로우, 컬럼
 
-![Untitled](../imgs/study03_4.png)
+![Untitled](../imgs/heechan/study03_4.png)
 
 1. 맥스 .. 표시
 
@@ -134,7 +134,7 @@ textTheme()
 2. ListView
 - 기본적으로 무한대의 크기를 갖는 위젯
 
-![Untitled](../imgs/study03_5.png)
+![Untitled](../imgs/heechan/study03_5.png)
 
 - children 방식과 builder방식이 있으며 builder방식을 쓰면 보이는것만 로드하여 메모리 관리에 좋다.
 - 쓸 수 있으면 builder방식을 사용하는것을 권장함
