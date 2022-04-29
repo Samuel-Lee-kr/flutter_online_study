@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:counter/src/components/message_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -36,23 +39,34 @@ class BottomNavController extends GetxController{
     pageIndex(value);
     if(!hasGesture) return;
 
-    if(!bottomHistory.contains(value)){
-      bottomHistory.remove(value);
-    }
+    //히스토리 관리를 위해 List안에 페이지 index가 있으면 지우고 추가한다.(중복방지 => 밀어내기)
+    // if(bottomHistory.contains(value)){
+    //   bottomHistory.remove(value);
+    // }
+    //
+    // bottomHistory.add(value);
+    // print(bottomHistory);
 
-    bottomHistory.add(value);
-    print(bottomHistory);
+    if(bottomHistory.last != value){
+      bottomHistory.add(value);
+    }
   }
 
   Future<bool> willPopAction() async {
+    //히스토리 적재된 페이지가 없을경우 뒤로가기 누르면 앱 종료 팝업을 띄운다.
     if(bottomHistory.length==1){
-      print("exit!");
+      showDialog(context: Get.context!
+          ,builder: (context) => MessagePopup(
+              title: '시스템',
+              message: '종료하시겠습니까',
+              okCallback: (){exit(0);},
+              cancelCallback: Get.back,
+          ));
       return true;
     }else{
-      print("go to before page");
+      bottomHistory.removeLast();
       var index = bottomHistory.last;
       changeBottomNav(index, hasGesture:false);
-      bottomHistory.removeLast();
       return false;
     }
   }

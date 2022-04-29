@@ -1,4 +1,5 @@
 import 'package:counter/src/components/image_data.dart';
+import 'package:counter/src/pages/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,13 +15,10 @@ class App extends GetView<BottomNavController> {
     return WillPopScope(
         child: Obx(
             () => Scaffold(
-            appBar: AppBar(),
             body: IndexedStack(
               index: controller.pageIndex.value,
               children: [
-                Container(
-                  child: Center(child: Text('HOME')),
-                ),
+                const Home(),
                 Container(
                   child: Center(child: Text('SEARCH')),
                 ),
