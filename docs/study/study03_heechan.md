@@ -18,7 +18,7 @@
 
 양끝딴 정렬 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-1. SafeArea: 기기별로 화면의 padding. 
+1. SafeArea: 기기별로 화면의 padding.  
 
 ⇒ Scaffold의 body를 감싸주면됨.
 
@@ -139,7 +139,6 @@ textTheme()
 - children 방식과 builder방식이 있으며 builder방식을 쓰면 보이는것만 로드하여 메모리 관리에 좋다.
 - 쓸 수 있으면 builder방식을 사용하는것을 권장함
 
-1. 익명함수 인자 사용하고 싶지 않을때 : (_) ⇒ test, 
 
 1. Function 멤버변수 사용하는 케이스, 요건
 - 내부적으로 사용하는 값들을 외부로 전달하여 외부 클래스에서 특정 동작을 정의하고 싶을때
