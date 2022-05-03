@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'controller/bottom_nav_controller.dart';
+import 'pages/search.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -19,8 +20,11 @@ class App extends GetView<BottomNavController> {
               index: controller.pageIndex.value,
               children: [
                 const Home(),
-                Container(
-                  child: Center(child: Text('SEARCH')),
+                Navigator(
+                  key: controller.serachPageNavigationKey,
+                  onGenerateRoute: (routeSetting){
+                    return MaterialPageRoute(builder: (context) => const Search());
+                  },
                 ),
                 Container(
                   child: Center(child: Text('UPLOAD')),
@@ -35,10 +39,10 @@ class App extends GetView<BottomNavController> {
             ),
             bottomNavigationBar:  BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              currentIndex: controller.pageIndex.value,
-              onTap: controller.changeBottomNav,
+              showSelectedLabels: false,                  //라벨 안보여주기
+              showUnselectedLabels: false,               //라벨 안보여주기
+              currentIndex: controller.pageIndex.value,  //현재페이지 보여줌
+              onTap: controller.changeBottomNav,        //바텀네비게이터 터치시 화면 전환
               elevation: 0,
               items: [
                 BottomNavigationBarItem(
