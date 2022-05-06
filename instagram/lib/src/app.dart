@@ -53,23 +53,23 @@ class App extends GetView<BottomNavController> {
                 BottomNavigationBarItem(
                     icon: ImageData(IconsPath.searchOff),
                     activeIcon: ImageData(IconsPath.searchOn),
-                    label: 'home'
+                    label: 'search'
                 ),
                 BottomNavigationBarItem(
                     icon: ImageData(IconsPath.uploadIcon),
-                    label: 'home'
+                    label: 'upload'
                 ),
                 BottomNavigationBarItem(
                     icon: ImageData(IconsPath.activeOff),
                     activeIcon: ImageData(IconsPath.activeOn),
-                    label: 'home'
+                    label: 'active'
                 ),
                 BottomNavigationBarItem(
-                    label: 'home',
+                    label: 'mypage',
                     icon: Container(
                       width: 30,
                       height: 30,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: Colors.grey,
                       ),
                     )
