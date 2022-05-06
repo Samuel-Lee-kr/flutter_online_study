@@ -8,7 +8,10 @@ import '../pages/upload.dart';
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
 
 class BottomNavController extends GetxController {
+  static BottomNavController get to => Get.find();
+
   RxInt pageIndex = 0.obs;
+  GlobalKey<NavigatorState> searchPageNavigationKey = GlobalKey<NavigatorState>();
   List<int> bottomHistory = [0];
 
   void changeBottomNav(int value, {hasGesture = true}) {
@@ -32,9 +35,6 @@ class BottomNavController extends GetxController {
     if (bottomHistory.last != value) {
       bottomHistory.add(value); // 여기가 문제
     }
-    // if (bottomHistory.contains(value)) {
-    //   bottomHistory.remove(value);
-    // }
   }
 
   Future<bool> willPopAction() async {
@@ -54,6 +54,14 @@ class BottomNavController extends GetxController {
       );
       return true;
     } else {
+      var page = PageName.values[bottomHistory.last];
+      if (page == PageName.SEARCH){
+        var value = await searchPageNavigationKey.currentState!.maybePop();
+        if(value == true){
+          return false;
+        }
+      }
+
       // bottomHistory.removeAt(bottomHistory.length - 1); // index가 0부터 시작하니깐 -1
       bottomHistory.removeLast(); // 마지막 추가된 리스트요소를 삭제
       var index = bottomHistory.last;

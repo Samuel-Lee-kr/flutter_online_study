@@ -1,10 +1,12 @@
 import 'package:crow_insta_clone/src/components/image_data.dart';
 import 'package:crow_insta_clone/src/controller/bottom_nav_controller.dart';
 import 'package:crow_insta_clone/src/pages/home.dart';
+import 'package:crow_insta_clone/src/pages/search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class App extends GetView<BottomNavController> {
+  // 1개의 컨트롤러만 쓴다는 의미 GetView
   const App({Key? key}) : super(key: key);
 
   @override
@@ -17,11 +19,14 @@ class App extends GetView<BottomNavController> {
           body: IndexedStack(
             index: controller.pageIndex.value,
             children: [
-              Container(
-                child: const Home(),
-              ),
-              Container(
-                child: Center(child: Text('search')),
+              const Home(),
+              Navigator(
+                key: controller.searchPageNavigationKey ,
+                onGenerateRoute: (routeSetting) {
+                  return MaterialPageRoute(
+                    builder: (context) => const Search(),
+                  );
+                },
               ),
               Container(
                 child: Center(child: Text('upload')),
