@@ -1,0 +1,74 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GetX",
+            "cwd": "GetX",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "GetX (profile mode)",
+            "cwd": "GetX",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "GetX (release mode)",
+            "cwd": "GetX",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "counter",
+            "cwd": "counter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "counter (profile mode)",
+            "cwd": "counter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "counter (release mode)",
+            "cwd": "counter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dart_code_factory",
+            "cwd": "dart_code_factory",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "instagram",
+            "cwd": "instagram",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "instagram (profile mode)",
+            "cwd": "instagram",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "instagram (release mode)",
+            "cwd": "instagram",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
