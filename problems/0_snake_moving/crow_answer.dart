@@ -6,7 +6,7 @@ void main() {
 
   // 다중 리스트 초기화 => 구글 보고 따라함. 이해는 안됨
   List<List<String>> groupList = List.generate(intRow, (value) => []);
-
+  //test
   for (int i = 0; i < intRow; i = i + 1) {
     if (i % 2 != 0) {
       k = k + 1;
