@@ -136,3 +136,7 @@ Controller controller = Get.put(Controller());
 // 스프링의 @Autowired 와 비슷하게 알아서 찾아서 DI 해줌
 Controller controller = Get.find();
 ```
+
+
+## heechan 링크 파일
+https://whispering-touch-c35.notion.site/GetX-24e326ed4bfd411595ad37026d6f5217
