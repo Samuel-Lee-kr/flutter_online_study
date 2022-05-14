@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:insta/src/components/image_data.dart';
 import 'package:get/get.dart';
 import 'package:insta/src/controller/bottom_nav_controller.dart';
+import 'package:insta/src/pages/active_history.dart';
 import 'package:insta/src/pages/home.dart';
+import 'package:insta/src/pages/my_page.dart';
 import 'package:insta/src/pages/search.dart';
 
 class App extends GetView<BottomNavController> {
@@ -23,15 +25,9 @@ class App extends GetView<BottomNavController> {
                   return MaterialPageRoute(builder: (context) => const Search());
                 },
               ),
-              Container(
-                child: Center(child: Text('UPLOAD')),
-              ),
-              Container(
-                child: Center(child: Text('ACTIVITY')),
-              ),
-              Container(
-                child: Center(child: Text('MYPAGE')),
-              ),
+              Container(),
+              const ActiveHistory(),
+              const MyPage(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
