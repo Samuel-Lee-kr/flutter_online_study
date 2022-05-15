@@ -2,7 +2,7 @@ void main() {
   List<bool> signs = [true, false, false, true, false];
   List<int> absolutes = [1, 6, 3, 5, 7];
 
-  // 빈 맵을 한번 만들어봄
+  // 빈 맵을 한번 만들어봄 ...
   Map<int, bool> dataMap = {};
 
   // 굳이 맵을 만들필요는 없지만 key:value 쌍으로 명확하게 변환
