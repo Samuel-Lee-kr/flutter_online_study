@@ -112,35 +112,39 @@ class AddItem extends GetView<ItemsController> {
         onPressed: () {
           Get.defaultDialog(
             title: AppStrings.addItemsDialogTitle,
-            content: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Divider(),
-                  CustomInput(
-                    label: "Item name",
-                    controller: controller.itemNameInputController,
-                  ),
-                  CustomInput(
-                      label: AppStrings.addItemsPrice,
-                      controller: controller.itemPriceInputController,
-                      type: TextInputType.number),
-                  CustomInput(
-                    label: AppStrings.addItemsQty,
-                    controller: controller.itemQtyInputController,
-                    type: TextInputType.number,
-                  ),
-                  CustomBtn(
-                    label: AppStrings.addBtn,
-                    action: () {
-                      bool isValid = controller.validate();
-                      if (isValid) {
-                        Get.close(1);
-                      }
-                    },
-                    color: AppColors.primaryColor,
-                    textColor: Colors.white,
-                  ),
-                ],
+            content: SizedBox(
+              height: 200,
+              child: SingleChildScrollView (
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    const Divider(),
+                    CustomInput(
+                      label: "Item name",
+                      controller: controller.itemNameInputController,
+                    ),
+                    CustomInput(
+                        label: AppStrings.addItemsPrice,
+                        controller: controller.itemPriceInputController,
+                        type: TextInputType.number),
+                    CustomInput(
+                      label: AppStrings.addItemsQty,
+                      controller: controller.itemQtyInputController,
+                      type: TextInputType.number,
+                    ),
+                    CustomBtn(
+                      label: AppStrings.addBtn,
+                      action: () {
+                        bool isValid = controller.validate();
+                        if (isValid) {
+                          Get.close(1);
+                        }
+                      },
+                      color: AppColors.primaryColor,
+                      textColor: Colors.white,
+                    ),
+                  ],
+                ),
               ),
             ),
           );

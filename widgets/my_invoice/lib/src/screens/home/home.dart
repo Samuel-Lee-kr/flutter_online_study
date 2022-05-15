@@ -43,12 +43,15 @@ class Home extends GetView<AllInvoiceController> {
             ),
           );
         }else {
-          return Column(
-            children: [
-              ...controller.invoicesList.map((invoice) => 
-                  InvoiceView(invoice: invoice)
-              ).toList(),
-            ],
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                ...controller.invoicesList.map((invoice) => 
+                    InvoiceView(invoice: invoice)
+                ).toList(),
+              ],
+            ),
           );
         }
       }),
