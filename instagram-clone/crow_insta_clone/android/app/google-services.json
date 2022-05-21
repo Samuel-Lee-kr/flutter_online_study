@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "452481818330",
+    "project_id": "crow-insta-clone",
+    "storage_bucket": "crow-insta-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452481818330:android:41c55727af9f0842184fe3",
+        "android_client_info": {
+          "package_name": "com.insta_clone_crow.crow_insta_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452481818330-ccgk2n1nbp4a8ctcbucbp0gh683ki6pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0H4PstWvv3iYgYnv687F9ggJJ73dXmRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452481818330-ccgk2n1nbp4a8ctcbucbp0gh683ki6pg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

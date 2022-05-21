@@ -17,6 +17,10 @@ dependencies:
   expandable_text: ^2.3.0
   quiver: ^3.1.0
   photo_manager: ^2.0.9
+  firebase_core: ^1.17.0
+  firebase_auth: ^3.3.18
+  google_sign_in: ^5.3.1
+  cloud_firestore: ^3.1.15
 
 dev_dependencies:
   flutter_test:
