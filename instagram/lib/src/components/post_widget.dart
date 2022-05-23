@@ -36,7 +36,7 @@ class PostWidget extends StatelessWidget {
   }
   
   Widget _image() {
-    return CachedNetworkImage(imageUrl: 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/279610309_544409587040296_956818974553936827_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=104&_nc_ohc=o5ZOAy-WUnUAX8wEgLe&tn=NDdIcst4ppbpxrYh&edm=ALQROFkBAAAA&ccb=7-4&ig_cache_key=MjgyODk3MjUwNzE3MDUxMjkxNg%3D%3D.2-ccb7-4&oh=00_AT-EX6z9K15ZM39Ruw5q-ZezcvEq7qD4rfT2NXeZYc3Tvw&oe=6276B5BE&_nc_sid=30a2ef');
+    return CachedNetworkImage(imageUrl: 'https://striz0.com/data/item/1653200390/thumb-7IOB7IS41_400x400.jpg');
   }
 
   Widget _infoCount(){

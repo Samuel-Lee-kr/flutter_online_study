@@ -1,5 +1,7 @@
 import 'package:counter/src/components/image_data.dart';
+import 'package:counter/src/pages/active_history.dart';
 import 'package:counter/src/pages/home.dart';
+import 'package:counter/src/pages/mypage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,15 +28,9 @@ class App extends GetView<BottomNavController> {
                     return MaterialPageRoute(builder: (context) => const Search());
                   },
                 ),
-                Container(
-                  child: Center(child: Text('UPLOAD')),
-                ),
-                Container(
-                  child: Center(child: Text('ACTIVITY')),
-                ),
-                Container(
-                  child: Center(child: Text('MYPAGE')),
-                ),
+                Container(),
+                const ActiveHistory(),
+                const MyPage()
               ],
             ),
             bottomNavigationBar:  BottomNavigationBar(
