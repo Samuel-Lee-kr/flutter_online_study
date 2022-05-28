@@ -1,0 +1,17 @@
+scalar DateTime
+scalar Date
+scalar Timestamp
+
+type User {
+    id: ID!
+    email: String!
+    password: String!
+    role: String!
+    createDate: Timestamp!
+}
+
+input saveUser {
+    email: String!
+    password: String!
+    createDate: Timestamp
+}

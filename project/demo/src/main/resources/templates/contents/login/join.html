@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/auth}">
+
+<head>
+    <title>join</title>
+</head>
+
+<div layout:fragment="content" id="auth">
+    <div class="row h-100">
+        <div class="col-lg-5 col-12">
+            <div id="auth-left">
+                <div class="auth-logo">
+                    <a href="/"><img th:src="@{/static/bootstrap/assets/images/logo/logo.png}" alt="Logo"></a>
+                </div>
+                <h1 class="auth-title">Sign Up</h1>
+                <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
+
+                <form th:action="@{/join}" method="post">
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" class="form-control form-control-xl" placeholder="Email" id="email" name="email" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" class="form-control form-control-xl" placeholder="Password" id="password" name="password" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type="submit">Sign Up</button>
+                </form>
+                <div class="text-center mt-5 text-lg fs-4">
+                    <p class='text-gray-600'>Already have an account? <a href="/login"
+                            class="font-bold">Log
+                            in</a>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 d-none d-lg-block">
+            <div id="auth-right">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script>
+        $(function () {
+            $('form').on('submit', function (e) {
+                checkDuplicate(e);
+            });
+        });
+
+        function checkDuplicate(e) {
+            e.preventDefault();
+            const token = $("meta[name='_csrf']").attr("content");
+            const header = $("meta[name='_csrf_header']").attr("content");
+
+            const $form = $('form');
+            const formData = {
+                email : $('#email').val(),
+                password : $('#password').val()
+            }
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader(header, token);
+                },
+                
+                success: function (res) {
+                    if(res.success){
+                        location.href = '[[@{/login}]]';
+                    } else {
+                        console.log("존재하는 아이디 입니다. 아이디 명을 바꿔주세요.");
+                    }
+                },
+
+                error: function (xhr, status, error) {
+                    console.log('error:' + error);
+                }
+
+            });
+        }
+    </script>
+</th:block>
+
+</html>

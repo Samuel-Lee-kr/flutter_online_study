@@ -1,0 +1,83 @@
+spring:
+  application:
+    name: demo
+  profiles:
+    active: local
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    encoding: UTF-8
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+    log-resolved-exception: true
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3308/test
+    username: testuser
+    password: testuser
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    open-in-view: false
+    show_sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 
+    password: 
+    properties:
+      mail:
+        smtp: 
+          auth: true
+          starttls:
+            enable: true
+
+
+
+
+server:
+  error:
+    include-exception: true
+    include-stacktrace: ALWAYS
+  port: 7766
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+logging:
+  exception-conversion-word: "%wEx"
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(${LOG_LEVEL_PATTERN:-%5p}){green} %clr([%22thread]){magenta} %clr(%-40.40logger{39}){cyan} %clr(: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}){faint}"
+  level:
+    web: debug
+
+graphql:
+  tools:
+    schema-location-pattern: "**/*.graphqls"
+    # Enable or disable the introspection query. Disabling it puts your server in contravention of the GraphQL
+    # specification and expectations of most clients, so use this option with caution
+    introspection-enabled: true
+  servlet:
+    maxQueryDepth: 5
+    # Sets if GraphQL servlet should be created and exposed. If not specified defaults to "true".
+    enabled: true
+    # Sets the path where GraphQL servlet will be exposed. If not specified defaults to "/graphql"
+    mapping: /graphql
+    cors-enabled: true
+    cors:
+      allowed-origins: http://localhost:7766
+      allowed-methods: GET, HEAD, POST
+    # if you want to @ExceptionHandler annotation for custom GraphQLErrors
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+    # Sets if asynchronous operations are supported for GraphQL requests. If not specified defaults to true.
+    async-mode-enabled: true
