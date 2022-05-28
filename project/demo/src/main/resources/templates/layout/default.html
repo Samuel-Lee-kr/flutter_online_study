@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- ajax csrf 토큰 -->
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+
+    <title>default</title>
+    <link rel="preconnect" th:href="@{/static/bootstrap/https://fonts.gstatic.com}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/bootstrap/assets/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/static/bootstrap/assets/vendors/iconly/bold.css}">
+
+    <link rel="stylesheet" th:href="@{/static/bootstrap/assets/vendors/perfect-scrollbar/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/static/bootstrap/assets/vendors/bootstrap-icons/bootstrap-icons.css}">
+    <link rel="stylesheet" th:href="@{/static/bootstrap/assets/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/static/bootstrap/assets/images/favicon.svg}" type="image/x-icon">
+</head>
+
+<body>
+    <div id="app">
+        <div th:replace="~{fragments/sidebar :: sidebarFragment}"></div>
+        <div id="main">
+            <header th:replace="~{fragments/header :: headerFragment}"></header>
+            <div layout:fragment="page-heading" class="page-heading"></div>
+            <div layout:fragment="page-content" class="page-content"></div>
+            <footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+        </div>
+    </div>
+    <script th:src="@{/static/js/jquery-3.6.0.min.js}"></script>
+    <th:block layout:fragment="script"></th:block>
+</body>
+
+</html>

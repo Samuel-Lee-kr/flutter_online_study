@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html 	lang="ko" 
+        xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- ajax csrf 토큰 -->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <title>auth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{static/bootstrap/assets/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{static/bootstrap/assets/vendors/bootstrap-icons/bootstrap-icons.css}">
+    <link rel="stylesheet" th:href="@{static/bootstrap/assets/css/app.css}">
+    <link rel="stylesheet" th:href="@{static/bootstrap/assets/css/pages/auth.css}">
+</head>
+
+<body>
+    <div layout:fragment="content"></div>
+    <script th:src="@{/static/js/jquery-3.6.0.min.js}"></script>
+    <th:block layout:fragment="script"></th:block>
+</body>
+
+</html>

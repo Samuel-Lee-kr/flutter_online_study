@@ -1,0 +1,9 @@
+# All available queries on this graphql server
+type Query {
+  # userFindById(id: ID!): User
+  userFindByEmail(email: String!): User
+}
+
+type Mutation {
+  addUser(saveUser: saveUser!): User
+}

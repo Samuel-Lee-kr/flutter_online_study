@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/error}">
+
+<head>
+    <title>403</title>
+</head>
+
+<div layout:fragment="content" id="error">
+    <div class="error-page container">
+        <div class="col-md-8 col-12 offset-md-2">
+            <img class="img-error" th:src="@{/static/bootstrap/assets/images/samples/error-403.png}" alt="Not Found">
+            <div class="text-center">
+                <h1 class="error-title">Forbidden</h1>
+                <p class="fs-5 text-gray-600">You are unauthorized to see this page.</p>
+                <a href="/" class="btn btn-lg btn-outline-primary mt-3">Go Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script>
+
+    </script>
+</th:block>
+
+</html>
