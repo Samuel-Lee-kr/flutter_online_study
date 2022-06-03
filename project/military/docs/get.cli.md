@@ -17,3 +17,39 @@ flutter upgrade
 ```
 get create project:PROJECT_NAME
 ```
+
+페이지 생성
+```
+get create page:PAGE_NAME
+```
+
+
+컨트롤러 생성
+```
+get create controller:login_controller on home
+```
+
+뷰 생성
+```
+get create view:login on home
+```
+
+프로바이더 생성
+```
+get create provider:user on home
+```
+
+localization = 언어 세팅
+```
+get generate locales assets/locales
+```
+
+model 만들기
+```
+get generate model on home with assets/models/user.json
+```
+
+htttp 패키지 설치
+```
+get install http
+```
