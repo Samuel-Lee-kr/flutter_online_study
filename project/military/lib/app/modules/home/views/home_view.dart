@@ -3,37 +3,38 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:military/app/modules/home/models/tabicon_data.dart';
 import 'package:military/app/modules/home/views/bottom_bar_view.dart';
+import 'package:military/app/modules/home/views/first_tab_view.dart';
+import 'package:military/app/modules/home/views/second_tab_view.dart';
 import 'package:military/app/ui/theme/app_theme.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView() {
-    controller.homeViewAnimationController;
+    controller.initHomeViewAnimationController();
     controller.addClick = () {};
+    controller.tabBody = FirstTabView();
     controller.changeIndex = (int index) {
         if (index == 0 || index == 2) {
           controller.homeViewAnimationController
               ?.reverse()
               .then<dynamic>((data) {
-            tabBody;
+            controller.tabBody = FirstTabView();
           });
         } else if (index == 1 || index == 3) {
           controller.homeViewAnimationController
               ?.reverse()
               .then<dynamic>((data) {
-            tabBody;
+            controller.tabBody = SecondTabView();
           });
         }
+        controller.update();
     };
     for(int i = 0; i < TabIconData.tabIconsList.length; i++) {
       controller.tabIconsList.add(TabIconData.tabIconsList[i]);
     }
+    controller.update();
   }
-
-  Widget tabBody = Container(
-    color: AppTheme.background,
-  );
 
   Future<bool> getData() async {
     await Future<dynamic>.delayed(const Duration(milliseconds: 200));
@@ -65,7 +66,7 @@ class HomeView extends GetView<HomeController> {
             } else {
               return Stack(
                 children: <Widget>[
-                  tabBody,
+                  GetBuilder<HomeController>(builder: (_) => controller.tabBody!),
                   bottomBar(),
                 ],
               );
