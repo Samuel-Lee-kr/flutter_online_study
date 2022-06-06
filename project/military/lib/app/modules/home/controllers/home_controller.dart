@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:military/app/modules/home/models/tabicon_data.dart';
 import 'package:military/app/modules/home/views/bottom_bar_view.dart';
+import 'package:military/app/modules/home/views/first_tab_view.dart';
 
 class HomeController extends GetxController with GetTickerProviderStateMixin {
+   
   // home_view.dart 에서 활용
   AnimationController? homeViewAnimationController;
   Function(int index)? changeIndex;
   Function()? addClick;
   final tabIconsList = <TabIconData>[].obs;
+  Widget? tabBody;
 
   // bottom_bar_view.dart 에서 활용
   AnimationController? bottomBarViewAnimationController;
