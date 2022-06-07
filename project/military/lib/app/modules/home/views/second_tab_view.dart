@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:military/app/modules/home/controllers/home_controller.dart';
 import 'package:military/app/modules/home/controllers/second_tab_controller.dart';
+import 'package:military/app/modules/home/views/customs/calendar_popup_view.dart';
 import 'package:military/app/modules/home/views/first/title_view.dart';
 import 'package:military/app/modules/home/views/second/second_type1_view.dart';
 import 'package:military/app/modules/home/views/second/second_type2_view.dart';
@@ -236,28 +237,37 @@ class SecondTabView extends GetView<SecondTabController> {
                                   left: 8,
                                   right: 8,
                                 ),
-                                child: Row(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.only(right: 8),
-                                      child: Icon(
-                                        Icons.calendar_today,
-                                        color: AppTheme.grey,
-                                        size: 18,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    showDialog<dynamic>(
+                                      context: context,
+                                      builder: (BuildContext context) => CalendarPopupView()
+                                    ); 
+                                  },
+                                  child: Row(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 8),
+                                        child: Icon(
+                                          Icons.calendar_today,
+                                          color: AppTheme.grey,
+                                          size: 18,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      '15 May',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontFamily: AppTheme.fontName,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 18,
-                                        letterSpacing: -0.2,
-                                        color: AppTheme.darkerText,
+                                      Text(
+                                        '15 May',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                          fontFamily: AppTheme.fontName,
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 18,
+                                          letterSpacing: -0.2,
+                                          color: AppTheme.darkerText,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                               SizedBox(

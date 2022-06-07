@@ -9,6 +9,9 @@ import '../controllers/home_controller.dart';
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
+    Get.lazyPut<CalendarPopupController>(
+      () => CalendarPopupController(),
+    );
     Get.lazyPut<SecondTabController>(
       () => SecondTabController(),
     );
