@@ -10,6 +10,7 @@ dependencies:
   get: 4.6.5
   http: 0.13.4
   animations: 2.0.3
+  intl: 0.17.0
   flutter: 
     sdk: flutter
 
@@ -20,7 +21,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
-  uses-material-design: true
-  
-  assets:
+  assets: 
     - assets/images/
+  uses-material-design: true
+
