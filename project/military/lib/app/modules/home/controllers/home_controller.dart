@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:military/app/modules/home/models/tabicon_data.dart';
 import 'package:military/app/modules/home/views/bottom_bar_view.dart';
-import 'package:military/app/modules/home/views/first_tab_view.dart';
 
 class HomeController extends GetxController with GetTickerProviderStateMixin {
    
@@ -20,6 +19,9 @@ class HomeController extends GetxController with GetTickerProviderStateMixin {
   List<AnimationController> tabAnimations = [];
   List<Function()?> removeAllSelect = [];
   final imageAssets = <Image>[].obs;
+
+  final startDate = DateTime.now().obs;
+  final endDate = DateTime.now().add(const Duration(days: 5)).obs;
 
   // home_view.dart 에서 활용
   void initHomeViewAnimationController() {
