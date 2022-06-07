@@ -11,16 +11,20 @@ class BottomBarView extends GetView<HomeController> {
 
   BottomBarView() {
     controller.initBottomBarViewAnimationController();
-    for(int i = 0; i < 4; i++) {
-      controller.tabList.add(
-        TabIcons(index: i, )
-      );
-      controller.removeAllSelect.add(() {
-        setRemoveAllSelection(
-          controller.tabIconsList[i]
+
+    if(controller.tabList.length != 4) {
+      controller.tabList.clear();
+      for(int i = 0; i < 4; i++) {
+        controller.tabList.add(
+            TabIcons(index: i, )
         );
-        controller.changeIndex!(i);
-      });
+        controller.removeAllSelect.add(() {
+          setRemoveAllSelection(
+              controller.tabIconsList[i]
+          );
+          controller.changeIndex!(i);
+        });
+      }
     }
   }
 
@@ -166,10 +170,12 @@ class TabIcons extends GetView<HomeController> {
   int index;
 
   TabIcons({required this.index}) {
-    controller.imageAssets.add(Image.asset(controller.tabIconsList[index].isSelected
-                      ? controller.tabIconsList[index].selectedImagePath
-                      : controller.tabIconsList[index].imagePath));
-    controller.initTabAnimations(index);
+    if(index == controller.imageAssets.length) {
+      controller.imageAssets.add(Image.asset(controller.tabIconsList[index].isSelected
+          ? controller.tabIconsList[index].selectedImagePath
+          : controller.tabIconsList[index].imagePath));
+      controller.initTabAnimations(index);
+    }
   }
 
   void setAnimation() {

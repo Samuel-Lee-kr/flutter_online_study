@@ -20,15 +20,16 @@ class HomeView extends GetView<HomeController> {
               ?.reverse()
               .then<dynamic>((data) {
             controller.tabBody = FirstTabView();
+            controller.update();
           });
         } else if (index == 1 || index == 3) {
           controller.homeViewAnimationController
               ?.reverse()
               .then<dynamic>((data) {
             controller.tabBody = SecondTabView();
+            controller.update();
           });
         }
-        controller.update();
     };
     for(int i = 0; i < TabIconData.tabIconsList.length; i++) {
       controller.tabIconsList.add(TabIconData.tabIconsList[i]);
